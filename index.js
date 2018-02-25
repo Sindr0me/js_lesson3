@@ -1,5 +1,3 @@
-'use strict'
-
 var positions = 
 [
     'Отвертка ультразвуковая WHO-D',
@@ -15,8 +13,9 @@ pushInPositions = positions.push('Экзоскелет Trooper-111', 'Нейро
 
 console.log('Окончательный cписок наименований');
 
-for (var i = 0, number = 0; i < pushInPositions;) {
-  console.log(number++ +1, positions[i++]);
+// избавьтесь от переменной number. Это же i+1
+for (var i = 0, number = 0; i < pushInPositions; i++, number++) {
+  console.log(number +1, positions[i]); // тут сложно. Увеличивайте i на этапе шага (в круглых скобках), а не в теле цикла
 }
 
 var getDeLoreanIndex = positions.indexOf('Машина времени DeLorean'),
@@ -25,6 +24,6 @@ delNumbers = positions.splice(getDeLoreanIndex, 1);
 positions.unshift(...delNumbers);
 
 console.log('Принять в первую очередь');
-for (var i = 0, number2 = 0; i < 3;) {
-  console.log(number2++ +1, positions[i++]);
+for (var i = 0, number2 = 0; i < 3; i++, number2++) {
+  console.log(number2 +1, positions[i]);
 }
