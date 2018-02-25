@@ -11,39 +11,20 @@ var positions =
     'Лингвенсор 000-17',
     'Целеуказатель электронный WAY-Y'
 ],
-number = 0,
-numberFromOne = 1,
-positionsLength = positions.length;
+pushInPositions = positions.push('Экзоскелет Trooper-111', 'Нейроинтерфейс игровой SEGUN', 'Семена дерева Эйва');
 
 console.log('Окончательный cписок наименований');
-while(number < positionsLength && numberFromOne < positionsLength + 1) 
-	{
-		console.log(numberFromOne++, positions[number++]);
-	}
 
-positions.push('Экзоскелет Trooper-111', 'Нейроинтерфейс игровой SEGUN', 'Семена дерева Эйва');
+for (var i = 0, number = 0; i < pushInPositions;) {
+  console.log(number++ +1, positions[i++]);
+}
 
-var positionsLength2 = positions.length;
+var getDeLoreanIndex = positions.indexOf('Машина времени DeLorean'),
+delNumbers = positions.splice(getDeLoreanIndex, 1);
 
-
-while(number < positionsLength2 && numberFromOne < positionsLength2 + 1) 
-	{
-		console.log(numberFromOne++, positions[number++]);
-	}
-
-var deLorean = positions.slice(4, 6),
-wayY = positions.slice(7, 8),
-number1 = 0,
-numberFromOne1 = 1;
-
-positions.splice(4, 2);
-positions.splice(5, 1);
-positions.unshift(...deLorean, ...wayY);
-
-var positionsLength3 = deLorean.length + wayY.length;
+positions.unshift(...delNumbers);
 
 console.log('Принять в первую очередь');
-while(number1 < positionsLength3 && numberFromOne1 < positionsLength3 + 1) 
-	{
-		console.log(numberFromOne1++, positions[number1++]);
-	}
+for (var i = 0, number2 = 0; i < 3;) {
+  console.log(number2++ +1, positions[i++]);
+}
